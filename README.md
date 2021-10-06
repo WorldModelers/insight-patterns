@@ -21,6 +21,8 @@ Regridding can be accomplished by specifying a new grid cell size or by using a 
 
 The goal of adjusting a model's time scale is to ensure that the time resolution is sufficiently coarse grained to readily facilitate end-user insight generation. Typically this is monthly or greater resolution. Models whose output is hourly or daily should be time scaled to a more coarse grained resolution.
 
+![TimeScaling](imgs/timescaling.png)
+
 ## Clipping
 
 Often, a model produces output for a large area or even the entire globe. However, analysts often only care about a specific region. Here we provide patterns for clipping a model's output to geographies (e.g. countries) of interest.
