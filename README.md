@@ -32,3 +32,5 @@ Often, a model produces output for a large area or even the entire globe. Howeve
 ## Analytics
 
 We primarily focus on two categories of analytics: those derived by leveraging population data and those derived by leveraging land use masks. Here we demonstrate how to join model output with population and land use masks in order to generate insights at the human scale.
+
+![Analytics](imgs/analytics.png)
