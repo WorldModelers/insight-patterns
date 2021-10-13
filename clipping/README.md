@@ -92,10 +92,15 @@ There are three (3) clipping examples:
 
 This example starts with sample GeoTIFF data of a large area at roughly 5 Km resolution. It is clipped to a smaller area of East African countries of interest and saved to a new GeoTIFF file.
 
+![ClippingGeoTIFF](imgs/clipping-geotiff.png)
+
 ## clipping-to-fixed
 
 A sample NetCDF file containing global sea surface temperatures for 24 time points is clipped to specified latitude and longitude parameters.
 
+![ClippingToFixed](imgs/clipping-to-fixed.png)
+
 ## clipping-to-reference
 
 This example starts with a sample NetCDF file based on the LPJmL model's output and the GPW population data. These datasets are clipped to the geographical boundaries for countries of interest using the GADM shape file.
+![ClippingtoReference](imgs/clipping-to-reference.png)

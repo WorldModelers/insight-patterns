@@ -72,10 +72,11 @@ There are two (2) regrid examples:
 
 A sample NetCDF file containing global sea surface temperatures for 24 time points is used. We calculate the scale in km of the dataset, and in our use case want to increase the scale to reduce the size of the dataset and match the scale of another hypothetical dataset. 
 
+![RegriddingFixed](imgs/regrid-fixed-cell.png)
 
 ## regrid-reference-cell-size-interpolate
 
 A sample NetCDF file, based on the LPJmL model's output, is clipped to the GADM geometries of countries of interest. The filtered model output is regridded to a higher scale resolution using interpolation and the total counts corrected for the change in scale.
 
-
+![RegriddingReference](imgs/regrid-reference-cell.png)
 

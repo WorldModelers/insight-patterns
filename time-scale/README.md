@@ -43,3 +43,7 @@ There is one (1) time scale example:
 ## timescale-resample-netcdf
 
 A sample NetCDF file, based on the Topoflow model's output, is loaded and the time scale resolution resampled from 120 minutes to 1 month using two methods: mean() and sum(). The resulting data is plotted either at a single time point or a single coordinate.
+
+![TimeScaling](imgs/timescaling.png)
+
+
