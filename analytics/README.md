@@ -1,6 +1,6 @@
 # Model Insight Patterns - Analytics
 
-This directory contains various Python patterns for model post-processing analytics. These patterns are designed to improve modelers' ability to derive insights and identify impacts from their models native outputs. 
+This directory contains various Python patterns for model post-processing analytics. These patterns are designed to improve modelers' ability to derive insights and identify impacts from their models' native outputs. 
 
 
 # Requirements
@@ -99,7 +99,7 @@ This example starts with sample GeoTIFF output from the MaxHop model and the MOD
 
 ## land-use-analytics
 
-A sample NetCDF file, based on the LPJmL model's output, and the MODIS land use dataset are loaded and clipped to the GADM geometries of countries of interest. The filtered MODIS dataset is regridded to match the filtered model outputu using a CDO nearest-neighbor method because the MODIS data is categorial, and this regridded MODIS dataset is merged with the filtered model output. This allows us to plot crop production by land use properties.
+A sample NetCDF file, based on the LPJmL model's output, and the MODIS land use dataset are loaded and clipped to the GADM geometries of countries of interest. The filtered MODIS dataset is regridded to match the filtered model output using a CDO nearest-neighbor method because the MODIS data is categorial, and this regridded MODIS dataset is merged with the filtered model output. This allows us to plot crop production by land use properties.
 
 
 
