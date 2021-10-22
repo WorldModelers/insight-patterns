@@ -8,6 +8,7 @@ These are organized into 5 directories, each of which will ultimately contain ex
 2. `time-scale`
 3. `clipping`
 4. `analytics`
+5. `conversions`
 
 ## Model Regridding
 
@@ -34,3 +35,11 @@ Often, a model produces output for a large area or even the entire globe. Howeve
 We primarily focus on two categories of analytics: those derived by leveraging population data and those derived by leveraging land cover masks. Here we demonstrate how to join model output with population and land cover masks in order to generate insights at the human scale.
 
 <img src="imgs/analytics.png" width="50%"/>
+
+
+## Conversions
+
+These short notebooks provide recipies for converting model output from one format to another, for example comma-seperated values (.csv) to NetCDF (.nc).
+
+<img src="imgs/csv2netcdf1.png" width="33%"/><img src="imgs/csv2netcdf2.png" width="33%"/><img src="imgs/csv2netcdf3.png" width="33%"/>
+
