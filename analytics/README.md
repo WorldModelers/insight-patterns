@@ -1,6 +1,6 @@
 # Model Insight Patterns - Analytics
 
-This directory contains various Python patterns for model post-processing analytics. These patterns are designed to improve modelers' ability to derive insights and identify impacts from their models native outputs. 
+This directory contains various Python patterns for model post-processing analytics. These patterns are designed to improve modelers' ability to derive insights and identify impacts from their models' native outputs. 
 
 
 # Requirements
@@ -37,13 +37,13 @@ unzip gadm_0.zip
 rm *.zip
 ```
 
-## Land-use NETCDF
+## Land-cover NETCDF
 
-The USGS [MODIS Land Use](https://lpdaac.usgs.gov/products/mcd12q1v006/) data product provides high resolution (500m) land type and land use data.
+The USGS [MODIS Land Cover](https://lpdaac.usgs.gov/products/mcd12q1v006/) data product provides high resolution (500m) land type and land cover data.
 
 The original `MODIS/Terra+Aqua Land Cover Type Yearly L3 Global 500 m SIN Grid` has been regridded using a `nearest` interpolation approach to 5 km resolution and clipped to Africa. The original data from MODIS can be [found here](https://jataware-world-modelers.s3.amazonaws.com/analytic-layers/MCD12Q1.006_500m_aid0001.nc) at the 500 m resolution.
 
-The land-use NetCDF file can be downloaded from S3 with the following shell command:
+The land-cover NetCDF file can be downloaded from S3 with the following shell command:
 ```
 wget https://jataware-world-modelers.s3.amazonaws.com/analytic-layers/land-use-5km.nc
 ```
@@ -87,28 +87,33 @@ The time variables are dropped in the Python patterns notebooks due to issues wh
 
 There are four (4) analytics examples:
 
-1. `land-use-analytics-locust-cropland`
-2. `land-use-analytics`
+1. `land-cover-analytics-locust-cropland`
+2. `land-cover-analytics`
 3. `population-analytics-locusts`
 4. `population-analytics`
 
 
-## land-use-analytics-locust-cropland
+## land-cover-analytics-locust-cropland
 
-This example starts with sample GeoTIFF output from the MaxHop model and the MODIS land use dataset. The GADM shape file is loaded, filtered for Ethiopia, and used to clip the MODIS and model output dataset to only Ethiopia. CDO is used to remap the MODIS data to the same grid resolution as the model output, using a nearest-neighbor method because the MODIS data is categorial. The regridded modis dataset is then merged with the model output for Ethiopia only. This allows us to plot locust extent by land cover type, for example crop lands. 
+This example starts with sample GeoTIFF output from the MaxHop model and the MODIS land cover dataset. The GADM shape file is loaded, filtered for Ethiopia, and used to clip the MODIS and model output dataset to only Ethiopia. CDO is used to remap the MODIS data to the same grid resolution as the model output, using a nearest-neighbor method because the MODIS data is categorial. The regridded modis dataset is then merged with the model output for Ethiopia only. This allows us to plot locust extent by land cover type, for example crop lands. 
 
-## land-use-analytics
+![LandCoverLocust](imgs/land-cover-analytics-locust-cropland.png)
 
-A sample NetCDF file, based on the LPJmL model's output, and the MODIS land use dataset are loaded and clipped to the GADM geometries of countries of interest. The filtered MODIS dataset is regridded to match the filtered model outputu using a CDO nearest-neighbor method because the MODIS data is categorial, and this regridded MODIS dataset is merged with the filtered model output. This allows us to plot crop production by land use properties.
+## land-cover-analytics
 
+A sample NetCDF file, based on the LPJmL model's output, and the MODIS land cover dataset are loaded and clipped to the GADM geometries of countries of interest. The filtered MODIS dataset is regridded to match the filtered model output using a CDO nearest-neighbor method because the MODIS data is categorial, and this regridded MODIS dataset is merged with the filtered model output. This allows us to plot crop production by land cover properties.
 
+![LandCoverAnalytics](imgs/land-cover-analytics.png)
 
 ## population-analytics-locusts
 
 This example starts with sample GeoTIFF output from the MaxHop model and the GPW popluation data. These datasets are filtered for Ethiopia using the GADM shape file. The filtered GPW dataset is regridded using CDO to match the filtered model output, and these are merged. Using the final merged dataset, we are able to plot population affected at an arbritary locust extent threshold.
 
+![PopulationAnalytics](imgs/population-analytics.png)
 
 
 ## population-analytics
 
 This example starts with a sample NetCDF file based on the LPJmL model's output and the GPW population data. These datasets are filtered for countries of interest using the GADM shape file, and the filtered GPW dataset is regridded to the filtered model output using CDO. After the regridded GPW data is merged with the filtered model output, we add a production-per-capita variable and plot this.
+
+![PopulationAnalytics](imgs/population-analytics-locusts.png)
